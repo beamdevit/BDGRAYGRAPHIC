@@ -1,0 +1,15 @@
+node_modules
+.next
+.env*
+!.env.example
+.railway/
+.vercel/
+*.pem
+*.key
+*.p12
+*.pfx
+.npmrc
+*.log
+public/media
+*.tsbuildinfo
+next-env.d.ts
