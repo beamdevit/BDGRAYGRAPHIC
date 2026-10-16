@@ -4,6 +4,8 @@ import { cookies } from 'next/headers'
 import { SiteLanguage } from '@/components/site/SiteLanguage'
 import { SiteBranding } from '@/components/site/SiteLogo'
 import { getSiteBranding } from '@/lib/site-branding'
+import { getSiteTheme } from '@/lib/get-site-theme'
+import { buildThemeCss } from '@/lib/site-theme'
 import { VisitorTracker } from '@/components/site/VisitorTracker'
 import { CookieConsent } from '@/components/site/CookieConsent'
 
@@ -19,6 +21,7 @@ export const metadata: Metadata = {
 export default async function FrontendLayout({ children }: { children: React.ReactNode }) {
   const locale = (await cookies()).get('site-language')?.value === 'en' ? 'en' : 'th'
   const logo = await getSiteBranding()
+  const theme = await getSiteTheme()
   return (
     <html lang={locale}>
       <head>
@@ -28,6 +31,7 @@ export default async function FrontendLayout({ children }: { children: React.Rea
           href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&family=Syne:wght@700&display=swap"
           rel="stylesheet"
         />
+        <style id="site-theme" dangerouslySetInnerHTML={{ __html: buildThemeCss(theme) }} />
       </head>
       <body>
         <SiteBranding logo={logo}>

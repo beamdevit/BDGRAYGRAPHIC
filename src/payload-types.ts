@@ -101,12 +101,14 @@ export interface Config {
   fallbackLocale: null;
   globals: {
     'site-branding': SiteBranding;
+    'site-theme': SiteTheme;
     'site-about': SiteAbout;
     'site-video': SiteVideo;
     'site-contact': SiteContact;
   };
   globalsSelect: {
     'site-branding': SiteBrandingSelect<false> | SiteBrandingSelect<true>;
+    'site-theme': SiteThemeSelect<false> | SiteThemeSelect<true>;
     'site-about': SiteAboutSelect<false> | SiteAboutSelect<true>;
     'site-video': SiteVideoSelect<false> | SiteVideoSelect<true>;
     'site-contact': SiteContactSelect<false> | SiteContactSelect<true>;
@@ -749,7 +751,7 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   createdAt?: T;
 }
 /**
- * เปลี่ยนโลโก้ในเมนูด้านบน หน้า Welcome และส่วนประวัติบริษัท แล้วกดบันทึกเพื่อแสดงบนเว็บไซต์
+ * เปลี่ยนโลโก้ในเมนูด้านบน หน้า Welcome และส่วน About Us ที่ไม่ได้ตั้งรูปภาพแยก แล้วกดบันทึกเพื่อแสดงบนเว็บไซต์
  *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "site-branding".
@@ -764,6 +766,41 @@ export interface SiteBranding {
    * ข้อความสำหรับผู้ใช้โปรแกรมอ่านหน้าจอ เช่น “โลโก้ Promptthum”
    */
   logoAlt?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * เลือกชุดสีสำเร็จรูปหรือปรับสีเองด้วยตัวเลือกสี แล้วกดบันทึกเพื่อเปลี่ยนสีหน้าเว็บไซต์ทันที
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-theme".
+ */
+export interface SiteTheme {
+  id: number;
+  /**
+   * ปุ่ม ลิงก์เด่น แถบหัวข้อ และพื้นหลังสีน้ำเงินของเว็บ
+   */
+  primary: string;
+  /**
+   * สีเข้มของพื้นหลังแบบไล่เฉด และสถานะ hover
+   */
+  primaryDark: string;
+  /**
+   * ลิงก์ตอน hover และหัวข้อเล็ก (eyebrow)
+   */
+  accent: string;
+  /**
+   * สีข้อความหลักและเส้นขอบ
+   */
+  ink: string;
+  /**
+   * พื้นหลังหลักของหน้าเว็บ
+   */
+  pageBg: string;
+  /**
+   * พื้นหลังส่วนเสริม เช่น การ์ดและกล่องข้อมูล
+   */
+  paper: string;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -872,6 +909,21 @@ export interface SiteContact {
 export interface SiteBrandingSelect<T extends boolean = true> {
   logo?: T;
   logoAlt?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-theme_select".
+ */
+export interface SiteThemeSelect<T extends boolean = true> {
+  primary?: T;
+  primaryDark?: T;
+  accent?: T;
+  ink?: T;
+  pageBg?: T;
+  paper?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
