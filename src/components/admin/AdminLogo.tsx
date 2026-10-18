@@ -2,7 +2,7 @@ export function AdminLogo() {
   return (
     <div className="pt-login-brand">
       <div className="pt-login-logo">
-        <img src="/assets/admin-logo.png" alt="BDGRAYGRAPHIC" width="1040" height="495" />
+        <img src="/assets/admin-logo.png" alt="BDGRAYGRAPHIC" width="280" height="280" />
       </div>
       <h1>จัดการเว็บไซต์ BDGRAYGRAPHIC</h1>
       <p>เข้าสู่ระบบเพื่อจัดการเนื้อหาและข้อมูลติดต่อ</p>
@@ -12,6 +12,6 @@ export function AdminLogo() {
 
 export function AdminIcon() {
   return (
-    <img className="pt-admin-icon" src="/assets/admin-logo.png" alt="BDGRAYGRAPHIC" width="1040" height="495" />
+    <img className="pt-admin-icon" src="/assets/admin-logo.png" alt="BDGRAYGRAPHIC" width="280" height="280" />
   )
 }
