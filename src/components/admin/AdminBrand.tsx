@@ -7,7 +7,7 @@ export function AdminBrand() {
   return (
     <div className="pt-nav-brand">
       <a className="pt-brand" href="/admin">
-        <img className="pt-nav-logo" src="/assets/admin-logo.png" alt="BDGRAYGRAPHIC" width="280" height="280" />
+        <img className="pt-nav-logo" src="/assets/admin-logo.png" alt="BDGRAYGRAPHIC" width="512" height="512" />
         <small>จัดการเว็บไซต์</small>
       </a>
       <a
