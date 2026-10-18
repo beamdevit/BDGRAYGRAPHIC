@@ -134,7 +134,7 @@ export function DashboardOverview({ data, analytics }: { data: DashboardData; an
     <div className="pt-dashboard">
       <header className="pt-dashboard-heading">
         <div>
-          <p className="pt-eyebrow">PROMPTTHUM / WORKSPACE</p>
+          <p className="pt-eyebrow">BDGRAYGRAPHIC / WORKSPACE</p>
           <h1>จัดการเว็บไซต์</h1>
           <p>เลือกงานที่ต้องการทำ หรือดูสถานะเนื้อหาและข้อความล่าสุด</p>
         </div>

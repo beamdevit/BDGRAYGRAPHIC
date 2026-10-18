@@ -27,7 +27,7 @@ export default buildConfig({
     user: Users.slug,
     theme: 'light',
     meta: {
-      titleSuffix: ' · Promptthum Admin',
+      titleSuffix: ' · BDGRAYGRAPHIC Admin',
     },
     components: {
       views: {
